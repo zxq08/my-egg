@@ -9,9 +9,9 @@ class HomeController extends Controller {
     ctx.body = 'hi, egg';
   }
   async inde2x() {
-    const { ctx } = this;
+    const { ctx,app } = this;
     console.log(ctx.session.counter)
-    ctx.body = 'hi, hello eggjs!';
+    ctx.body = `hi, hello eggjs!\r\nnow: ${app.currentTime()}`;
   }
 }
 
