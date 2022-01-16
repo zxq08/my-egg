@@ -36,6 +36,18 @@ module.exports = appInfo => {
     renew: true,        // 页面有访问动作自动刷新session 
   }
 
+  config.mysql = {
+    app:true,     //是否挂载到app下面
+    agent:false,  //是否挂载到代理下面
+    client:{
+      host:'127.0.0.1',      // 数据库地址
+      port:'3306',           // 端口
+      user:'root',           // 用户名
+      password:'123456',    // 密码
+      database:'myegg'    // 连接的数据库名称
+    }
+  }
+
   return {
     ...config,
     ...userConfig,

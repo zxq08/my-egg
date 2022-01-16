@@ -10,4 +10,9 @@ module.exports = app => {
   router.post('/token', controller.home.indexWithToken);
   router.get('/setToken', controller.home.newResponse);
   router.get('/myegg', counter, controller.home.inde2x);
+
+  router.get("/addGirl", controller.girlManage.addGirl);
+router.get("/delGirl", controller.girlManage.delGirl);
+router.get("/updateGirl", controller.girlManage.updateGirl);
+router.get("/getGirls", controller.girlManage.getGirls);
 };
