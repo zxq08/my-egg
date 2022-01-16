@@ -16,14 +16,22 @@ class GirlManage extends Controller {
 
     async delGirl() {
         const { ctx } = this;
-        const res = await ctx.service.testdb.delGirl()
-        ctx.body = "删除女孩";
+        const id={"id":1};
+        const res = await ctx.service.testdb.delGirl(id)
+        console.log(res)
+        ctx.body = `删除女孩${res?'成功':'失败'}`;
     }
 
     async updateGirl() {
         const { ctx } = this;
-        const res = await ctx.service.testdb.updateGirl()
-        ctx.body = "修改女孩";
+        const params = {
+            id:1,
+            name:'小白',
+            age:20,
+            skill:'头疗'
+        }
+        const res  = await ctx.service.testdb.updateGirl(params)
+        ctx.body = `修改女孩${res?'成功':'失败'}`;
     }
 
     async getGirls() {

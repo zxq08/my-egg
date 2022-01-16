@@ -15,9 +15,27 @@ class testdbService extends Service {
       }
   }
   // 删除数据库
-  async delGirl() {}
+  async delGirl(id) {
+    try {
+        const { app } = this;
+        const res = await app.mysql.delete('girls',id)
+        return res;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+  }
   // 修改数据库
-  async updateGirl() {}
+  async updateGirl(params) {
+    try {
+        const { app } = this;
+        const res= await app.mysql.update('girls',params);
+        return res;
+      } catch (error) {
+        console.log(error);
+          return null;
+      }
+  }
 
   // 查询数据库
   async getGirls(id) {
